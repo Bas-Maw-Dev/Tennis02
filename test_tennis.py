@@ -4,6 +4,12 @@ class Player:
   def __init__(self, name):
     self.name = name
     self.score = 0
+    
+class Game:
+  def __init__(self, player_1, player_2):
+    self.player_1 = Player(player_1.name)
+    self.player_2 = Player(player_2.name)
+      
 
 @pytest.fixture
 def player_1():
