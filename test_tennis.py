@@ -32,4 +32,10 @@ def test_players_in_a_game(player_1, player_2):
   assert game.player_1.name == "Player 1"
   assert game.player_2.name == "Player 2"
   
+def test_players_score_15(player_1, player_2):
+  game = Game(player_1, player_2)
+  game.player_1.score_point()
+  assert game.player_1.score == 15
+
+  
   
