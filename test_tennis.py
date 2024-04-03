@@ -27,10 +27,6 @@ def test_player_exists(player_1):
 def test_player_score_0(player_1):
   assert player_1.score == 0
   
-def test_two_players(player_1, player_2):
-  assert player_1.name == "Player 1"
-  assert player_2.name == "Player 2"
-  
 def test_players_in_a_game(player_1, player_2):
   game = Game(player_1, player_2)
   assert game.player_1.name == "Player 1"
