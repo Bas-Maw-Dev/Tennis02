@@ -1,6 +1,7 @@
 class Player:
   def __init__(self, name):
     self.name = name
+    self.score = 0
 
 # Each player can have either of these points in one game 0 15 30 40
 
