@@ -1,14 +1,14 @@
 import pytest
 
 class Player:
+  scores = [0, 15, 30, 40]
+  
   def __init__(self, name):
     self.name = name
-    self.score = 0
+    self.score = Player.scores[0]
     
   def score_point(self):
-    if self.score == 15:
-      self.score = 30
-    else: self.score = 15
+    self.score = Player.scores[Player.scores.index(self.score) + 1]
     
 class Game:
   def __init__(self, player_1, player_2):
