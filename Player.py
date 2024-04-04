@@ -1,5 +1,5 @@
 class Player:
-  scores = [0, 15, 30, 40]
+  scores = [0, 15, 30, 40, "Win"]
   
   def __init__(self, name):
     self.name = name
