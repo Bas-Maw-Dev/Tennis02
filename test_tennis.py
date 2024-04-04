@@ -71,8 +71,8 @@ def test_players_in_deuce(game):
 def test_advantage(game):
   game.player_1.score = "deuce"
   game.player_2.score = "deuce"
-  game.check_scores()
   game.player_2.score_point()
+  game.check_scores()
   assert game.player_2.score == "advantage"
   
 def test_wins_from_advantage(game):
