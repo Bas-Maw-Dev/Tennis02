@@ -73,3 +73,19 @@ def test_advantage(game):
   game.check_scores()
   game.player_2.score_point()
   assert game.player_2.score == "advantage"
+  
+def test_wins_from_advantage(game):
+  game.player_1.score = "deuce"
+  game.player_2.score = "advantage"
+  game.player_2.score_point()
+  game.check_scores()
+  assert game.player_2.score == "Win"
+  
+# If the player without advantage wins they are back at deuce
+def test_players_return_to_deuce(game):
+  game.player_1.score = "deuce"
+  game.player_2.score == "advantage"
+  game.player_1.score_point()
+  game.check_scores()
+  assert game.player_1.score == "deuce"
+  assert game.player_2.score == "deuce"
