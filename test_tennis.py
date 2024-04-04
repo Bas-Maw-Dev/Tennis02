@@ -1,20 +1,10 @@
 import pytest
+from Player import *
 
-class Player:
-  scores = [0, 15, 30, 40]
-  
-  def __init__(self, name):
-    self.name = name
-    self.score = Player.scores[0]
-    
-  def score_point(self):
-    self.score = Player.scores[Player.scores.index(self.score) + 1]
-    
 class Game:
   def __init__(self, player_1, player_2):
     self.player_1 = Player(player_1.name)
     self.player_2 = Player(player_2.name)
-      
 
 @pytest.fixture
 def player_1():
