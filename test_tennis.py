@@ -51,3 +51,10 @@ def test_player_can_win(game):
   game.player_1.score = 40
   game.player_1.score_point()
   assert game.player_1.score == "Win"
+  
+# If both have 40 the players are deuce
+def test_players_in_deuce(game):
+  game.player_1.score = 30
+  game.player_2.score = 40
+  game.player_1.score_point()
+  assert game.player_1.score == "deuce"
