@@ -43,3 +43,9 @@ def test_both_players_score(player_1, player_2):
   assert game.player_1.score == 15
   assert game.player_2.score == 15
   
+def test_players_can_score_30(player_1, player_2):
+  game = Game(player_1, player_2)
+  game.player_2.score = 15
+  game.player_2.score_point()
+  assert game.player_2.score == 30
+  
