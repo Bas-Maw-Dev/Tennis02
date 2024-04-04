@@ -64,3 +64,11 @@ def test_players_in_deuce(game):
   game.player_1.score_point()
   game.check_scores()
   assert game.player_1.score == "deuce"
+  
+# If the game is in deuce, the winner of a ball will have advantage and game ball
+
+def test_advantage(game):
+  game.player_1.score = "deuce"
+  game.player_2.score = "deuce"
+  game.player_2.score_point()
+  assert player_2.score == "advantage"
