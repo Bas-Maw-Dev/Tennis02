@@ -6,7 +6,9 @@ class Player:
     self.score = 0
     
   def score_point(self):
-    self.score = 15
+    if self.score == 15:
+      self.score = 30
+    else: self.score = 15
     
     
 class Game:
