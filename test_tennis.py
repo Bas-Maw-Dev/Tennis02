@@ -5,6 +5,11 @@ class Game:
   def __init__(self, player_1, player_2):
     self.player_1 = Player(player_1.name)
     self.player_2 = Player(player_2.name)
+    
+  def check_scores(self):
+    if self.player_1.score == 40 and self.player_2.score == 40:
+      self.player_1.score = "deuce"
+      self.player_2.score = "deuce"
 
 @pytest.fixture
 def player_1():
@@ -57,4 +62,5 @@ def test_players_in_deuce(game):
   game.player_1.score = 30
   game.player_2.score = 40
   game.player_1.score_point()
+  game.check_scores()
   assert game.player_1.score == "deuce"
