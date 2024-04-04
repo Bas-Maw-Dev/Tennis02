@@ -7,7 +7,8 @@ class Game:
     self.player_2 = Player(player_2.name)
     
   def check_scores(self):
-    if self.player_1.score == 40 and self.player_2.score == 40:
+    if (self.player_1.score == 40 and self.player_2.score == 40) or\
+        (self.player_1.score == "advantage" and self.player_2.score =="advantage"):
       self.player_1.score = "deuce"
       self.player_2.score = "deuce"
 
@@ -84,7 +85,7 @@ def test_wins_from_advantage(game):
 # If the player without advantage wins they are back at deuce
 def test_players_return_to_deuce(game):
   game.player_1.score = "deuce"
-  game.player_2.score == "advantage"
+  game.player_2.score = "advantage"
   game.player_1.score_point()
   game.check_scores()
   assert game.player_1.score == "deuce"
