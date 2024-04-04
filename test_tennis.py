@@ -45,3 +45,9 @@ def test_players_can_score_40(game):
   game.player_1.score = 30
   game.player_1.score_point()
   assert game.player_1.score == 40
+  
+# If you have 40 and you win the ball you win the game
+def test_player_can_win(game):
+  game.player_1.score = 40
+  game.player_1.score_point()
+  assert game.player_1.score == "Win"
