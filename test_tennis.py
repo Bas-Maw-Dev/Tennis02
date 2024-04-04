@@ -5,6 +5,10 @@ class Player:
     self.name = name
     self.score = 0
     
+  def score_point(self):
+    self.score = 15
+    
+    
 class Game:
   def __init__(self, player_1, player_2):
     self.player_1 = Player(player_1.name)
@@ -37,5 +41,10 @@ def test_players_score_15(player_1, player_2):
   game.player_1.score_point()
   assert game.player_1.score == 15
 
-  
+def test_both_players_score(player_1, player_2):
+  game = Game(player_1, player_2)
+  game.player_1.score_point()
+  game.player_2.score_point()
+  assert game.player_1.score == 15
+  assert game.player_2.score == 15
   
